@@ -1,0 +1,24 @@
+[project]
+name = "ai-spike-agent-swarm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiofiles==25.1.0",
+    "beautifulsoup4==4.14.3",
+    "httpx==0.28.1",
+    "ipykernel==7.1.0",
+    "langfuse==3.12.1",
+    "lxml==6.0.2",
+    "markdownify==1.2.2",
+    "pydantic==2.12.5",
+    "pydantic-ai==1.44.0",
+    "python-dotenv==1.2.1",
+    "ruff==0.14.13",
+    "taskipy==1.14.1",
+]
+
+[tool.taskipy.tasks]
+lint = "uv run ruff format . --check && uv run ruff check ."
+create-kernel = "ipython kernel install --user --env VIRTUAL_ENV $(pwd)/.venv --name=ai-spike-agent-swarm"
