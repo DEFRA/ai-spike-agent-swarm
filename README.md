@@ -22,6 +22,9 @@ pipx install uv
 
 # sync dependencies
 uv sync
+
+# create jupyter kernel
+uv run task create-kernel
 ```
 
 ### Environment Variables
