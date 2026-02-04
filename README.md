@@ -27,6 +27,20 @@ uv sync
 uv run task create-kernel
 ```
 
+### VS Code Setup
+If you are running the notebooks in VS Code, we recommend installing the following extensions:
+- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) - For Python language support.
+- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) - For Jupyter notebook support.
+
+Ensure that the Jupyter kernel created by `uv` is selected in your VS Code environment which should be named `ai-agent-swarm-spike`.
+
+### Jupyter Server
+If you prefer to run a Jupyter server directly, you can do so with the following command:
+
+```bash
+uv run --with jupyter jupyter lab
+```
+
 ### Environment Variables
 
 This project uses a `.env` file stored in the `./notebooks` directory to manage environment variables. An example `.env.example` file is provided. Please copy this file to `./notebooks/.env` and fill in the required values.
@@ -56,9 +70,11 @@ docker run --rm -it -p 4318:4318 --name otel-tui ymtdzzz/otel-tui:latest
 Make sure to set `OTEL_EXPORTER_OTLP_ENDPOINT` in your `.env` file to enable tracing.
 
 ## Notebooks
-
 The experiments are contained within Jupyter notebooks located in the `notebooks/` directory. There are two main categories of notebooks:
 * Scrapers - Notebooks that scrape and prepare data for analysis.
 * Swarms - Notebooks that demonstrate multi-agent AI swarms analyzing the prepared data.
+
+> [!IMPORTANT]
+> Ensure that the scraper notebook is run before the swarm notebook, as the swarm depends on the data prepared by the scrapers.
 
 Further documentation is provided within each notebook and in the [Experiment Writeup](experiment-writeup.md).
