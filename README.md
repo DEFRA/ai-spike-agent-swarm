@@ -75,6 +75,6 @@ The experiments are contained within Jupyter notebooks located in the `notebooks
 * Swarms - Notebooks that demonstrate multi-agent AI swarms analyzing the prepared data.
 
 > [!IMPORTANT]
-> Ensure that the scraper notebook are run before the swarm notebook, as the swarm depend on the data prepared by the scrapers.
+> Ensure that the scraper notebook is run before the swarm notebook, as the swarm depends on the data prepared by the scrapers.
 
 Further documentation is provided within each notebook and in the [Experiment Writeup](experiment-writeup.md).
